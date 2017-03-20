@@ -1,0 +1,19 @@
+<div id="todos">
+		<ul>
+			{{#each model as |todo|}}
+				{{#link-to 'todos.edit' todo}}
+					<li class="{{if todo.isCompleted 'completed'}} {{if todo.isUrgent 'urgent'}} {{if todo.isInactive 'inactive'}}">{{todo.title}}</li>
+				{{/link-to}}
+			{{/each}}
+		</ul>
+	<section>
+		<div id="buttons">
+			{{#link-to 'todos.new' class="button"}}New{{/link-to}}
+			<section class="button">
+				written in Ember
+				<a href="http://www.adrianaalter.site/">Adriana Alter</a>
+			</section>
+		</div>
+		{{outlet}}
+	</section>
+</div>

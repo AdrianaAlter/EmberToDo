@@ -1,0 +1,15 @@
+<form>
+		<div>
+			<label for="title">Title: {{input value=todo.title id="title"}}</label>
+		</div>
+		<div>
+			<label for="completed">Completed: {{input type='checkbox' checked=todo.isCompleted id="completed"}}</label>
+			<label for="urgent">Urgent: {{input type='checkbox' checked=todo.isUrgent id="urgent"}}</label>
+			<label for="active">Inactive: {{input type='checkbox' checked=todo.isInactive id="inactive"}}</label>
+		</div>
+		<div>
+			<button {{action 'save' todo}}>Save</button>
+			<button {{action 'delete' todo}}>Delete</button>
+		</div>
+</form>
+{{yield}}
